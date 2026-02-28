@@ -376,17 +376,14 @@ const { t } = Astro.props;
             ✕
         </button>
         <h3 class="text-2xl font-bold mb-6">{t.modalCtaTitle}</h3>
-        <form
-            method="dialog"
-            class="space-y-4"
-            onsubmit="event.preventDefault(); this.closest('dialog').close();"
-        >
+        <form id="waitlist-form" class="space-y-4">
             <div>
                 <label class="block text-sm font-medium mb-1"
                     >{t.labelEmail}
                 </label>
                 <input
                     type="email"
+                    name="email"
                     class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black"
                     required
                 />
@@ -398,6 +395,7 @@ const { t } = Astro.props;
                     </label>
                     <input
                         type="number"
+                        name="age"
                         min="18"
                         class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black"
                         required
@@ -408,6 +406,7 @@ const { t } = Astro.props;
                         >{t.labelSex}
                     </label>
                     <select
+                        name="sex"
                         class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black bg-white"
                         required
                     >
@@ -422,15 +421,68 @@ const { t } = Astro.props;
                     >{t.labelComment}
                 </label>
                 <textarea
+                    name="comment"
                     class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black resize-none h-24"
                 ></textarea>
             </div>
             <button
                 type="submit"
-                class="w-full bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors mt-4 cursor-pointer"
+                id="submit-form-btn"
+                class="w-full bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors mt-4 cursor-pointer disabled:opacity-50"
             >
                 {t.submitBtn}
             </button>
         </form>
     </div>
 </dialog>
+
+<script>
+    const form = document.getElementById("waitlist-form") as HTMLFormElement;
+    const submitBtn = document.getElementById(
+        "submit-form-btn"
+    ) as HTMLButtonElement;
+    const modalCta = document.getElementById("modal-cta") as HTMLDialogElement;
+
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {
+                email: formData.get("email"),
+                age: formData.get("age"),
+                sex: formData.get("sex"),
+                comment: formData.get("comment"),
+            };
+
+            // Cambiar estado del botón
+            const originalText = submitBtn.innerText;
+            submitBtn.disabled = true;
+            submitBtn.innerText = "...";
+
+            try {
+                const response = await fetch("/api/join", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    alert("¡Gracias! Te avisaremos pronto.");
+                    form.reset();
+                    modalCta.close();
+                } else {
+                    alert("Hubo un error. Inténtalo de nuevo.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("No se pudo conectar con el servidor.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            }
+        });
+    }
+</script>

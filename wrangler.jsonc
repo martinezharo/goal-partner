@@ -1,0 +1,17 @@
+{
+  "name": "goal-partner",
+  "compatibility_date": "2024-04-03",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": "./dist",
+  "kv_namespaces": [
+    {
+      "binding": "WAITLIST",
+      "id": "835a252f3a7b433888170c964ff6f6be"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
