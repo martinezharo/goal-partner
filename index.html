@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal: Partner. | La alternativa a las apps de citas</title>
+    <meta name="description"
+        content="El negocio del fracaso ha terminado. Encuentra pareja sin algoritmos opacos, sin suscripciones y sin mecánicas adictivas.">
+
+    <link rel="alternate" hreflang="es" href="https://goal-partner.com/" />
+    <link rel="alternate" hreflang="en" href="https://goal-partner.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://goal-partner.com/" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Transiciones suaves para los modales nativos */
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white">
+
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold text-xl tracking-tight">GOAL: PARTNER.</span>
+            <button id="lang-toggle"
+                class="text-sm font-medium px-3 py-1 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-colors">
+                EN
+            </button>
+        </div>
+    </nav>
+
+    <header class="max-w-6xl mx-auto px-6 pt-10 pb-16 md:pt-16">
+        <div
+            class="relative w-full max-w-5xl mx-auto aspect-[4/5] md:aspect-[21/9] bg-zinc-100 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-zinc-200 shadow-2xl group transition-all duration-500">
+            <!-- Imagen Hero -->
+            <picture>
+                <source media="(min-width: 768px)" srcset="images/escritorio.webp">
+                <img src="images/movil.webp" alt="Interfaz de Goal Partner"
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+            </picture>
+
+            <!-- Overlay Gradiente Profesional -->
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/20 md:to-transparent">
+            </div>
+
+            <!-- Contenido Texto Overlaid -->
+            <div
+                class="absolute inset-0 flex flex-col items-center justify-end pb-12 px-8 md:justify-center md:items-start md:p-16 text-center md:text-left text-white animate-fade-in-up">
+                <h1 class="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter max-w-2xl mb-6 md:mb-8 leading-[0.9] md:leading-[0.85] text-balance"
+                    data-i18n="hero-title">
+                    El negocio del fracaso ha terminado.
+                </h1>
+                <a href="#paradox"
+                    class="group inline-flex items-center gap-2 text-lg font-bold underline underline-offset-8 decoration-1 text-white hover:text-zinc-300 transition-all">
+                    <span data-i18n="hero-link">Sigue leyendo</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="paradox" class="py-24 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-8" data-i18n="paradox-title">La paradoja de las
+                plataformas de citas</h2>
+            <p class="text-lg md:text-xl text-zinc-400 leading-relaxed text-balance" data-i18n="paradox-text">
+                ¿De verdad crees que una app que vive de que pases horas dentro; viendo anuncios, pagando
+                microtransacciones y renovando suscripciones; quiere que encuentres pareja y la abandones?
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-3xl md:text-5xl font-black tracking-tighter mb-16 text-center text-white text-balance"
+                data-i18n="drawbacks-title">¿Cómo te desvían de tu objetivo real: encontrar pareja?</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Card 1: Límites de Uso -->
+                <article
+                    class="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900/60 transition-all duration-500 group">
+                    <div
+                        class="w-20 h-20 mb-8 rounded-3xl bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                        <i class="fa-solid fa-ban text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white" data-i18n="card1-title">Límites de Uso</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="card1-text">Sólo se te permite ver una
+                        cierta cantidad de gente cada cierto tiempo, te guste o no la gente que se te muestra.</p>
+                </article>
+
+                <!-- Card 2: Algoritmos Opacos -->
+                <article
+                    class="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900/60 transition-all duration-500 group">
+                    <div
+                        class="w-20 h-20 mb-8 rounded-3xl bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                        <i class="fa-solid fa-book-skull text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white" data-i18n="card2-title">Algoritmos Opacos</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="card2-text">Dentro del número limitado
+                        de personas que se te permite ver, nadie sabe por qué se te recomienda una persona sí u otra no,
+                        queda a su discreción.</p>
+                </article>
+
+                <!-- Card 3: Gamificación -->
+                <article
+                    class="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900/60 transition-all duration-500 group">
+                    <div
+                        class="w-20 h-20 mb-8 rounded-3xl bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                        <i class="fa-solid fa-gamepad text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white" data-i18n="card3-title">Gamificación</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="card3-text">Swipes y otras mecánicas que
+                        convierten algo tan serio como una relación en un juego de niños.</p>
+                </article>
+
+                <!-- Card 4: Adaptabilidad Nula -->
+                <article
+                    class="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900/60 transition-all duration-500 group">
+                    <div
+                        class="w-20 h-20 mb-8 rounded-3xl bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                        <i class="fa-solid fa-eye-slash text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white" data-i18n="card4-title">Adaptabilidad Nula</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="card4-text">Estás obligado a mostrarte,
+                        no como eres, sino como la plataforma quiere que te muestres: Prompts, límites de caracteres,
+                        obligatoriedad de poner o no poner foto…</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-zinc-50 text-zinc-900 border-y border-zinc-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-24 h-24 mx-auto bg-zinc-200 rounded-full mb-8 overflow-hidden border border-zinc-300">
+                <img src="images/manos.webp" alt="" class="w-full h-full object-cover">
+            </div>
+            <p class="text-xl md:text-3xl font-medium leading-relaxed text-balance text-zinc-700" data-i18n="alt-text">
+                Todas las apps dicen ser "la alternativa". Pero mientras repitan las mismas trampas, siguen dentro de la
+                paradoja. La única que comparte tu mismo objetivo es Goal: Partner.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-center" data-i18n="diff-title">¿Qué hace a
+            Goal: Partner. diferente?</h2>
+
+        <div class="space-y-24">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div
+                    class="w-full md:w-1/2 aspect-square bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
+                    <img src="images/libre.webp" alt="Sin publicidad" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="diff1-title">Sin suscripciones, microtransacciones ni
+                        publicidad</h3>
+                    <p class="text-zinc-600 text-lg leading-relaxed" data-i18n="diff1-text">No obtenemos ningún
+                        beneficio por tu uso continuo o prolongado. De hecho, al renunciar a ingresos recurrentes, nos
+                        vemos obligados a ofrecerte el mejor servicio posible para que encuentres pareja y dejes de usar
+                        la plataforma lo antes posible.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div
+                    class="w-full md:w-1/2 aspect-square bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
+                    <img src="images/transparencia.webp" alt="Transparencia" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="diff2-title">Algoritmo transparente</h3>
+                    <p class="text-zinc-600 text-lg leading-relaxed mb-6" data-i18n="diff2-text">Las personas que
+                        cumplen tus requisitos aparecen ordenadas por porcentaje de compatibilidad o proximidad, según
+                        prefieras.</p>
+                    <button onclick="document.getElementById('modal-compatibilidad').showModal()"
+                        class="text-sm font-bold underline underline-offset-4 hover:text-zinc-600"
+                        data-i18n="diff2-btn">Descubre cómo calculamos la compatibilidad.</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div
+                    class="w-full md:w-1/2 aspect-square bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
+                    <img src="images/tiempo.webp" alt="Ahorro de tiempo" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="diff3-title">Tiempo en tus manos</h3>
+                    <p class="text-zinc-600 text-lg leading-relaxed" data-i18n="diff3-text">Ves todas las personas que
+                        encajan con tus filtros al instante, sin pagar y sin esperas absurdas. No necesitas estar
+                        pendiente de la app todo el día: revisa a todos de golpe y, si no hay nadie que te convenza,
+                        activa las notificaciones y te avisaremos cuando llegue alguien realmente compatible.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div
+                    class="w-full md:w-1/2 aspect-square bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
+                    <img src="images/se-tu-mismo.webp" alt="Sé tú mismo" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="diff4-title">Uso flexible</h3>
+                    <p class="text-zinc-600 text-lg leading-relaxed" data-i18n="diff4-text">Preséntate como quieras: con
+                        o sin foto, con una frase breve o un texto largo. Aquí decides tú.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-zinc-50 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-12" data-i18n="price-title">¿Cuál es el coste de
+                Goal: Partner.?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-3xl bg-white border border-zinc-200 text-left opacity-60">
+                    <span class="text-sm font-bold tracking-wider text-zinc-500 uppercase"
+                        data-i18n="price-label">Precio</span>
+                    <div class="text-5xl font-bold mt-2 mb-4 line-through">50€</div>
+                    <p class="text-zinc-600" data-i18n="price-text">Sin cuotas mensuales, sin planes premium y sin letra
+                        pequeña. Pagas una sola vez al registrarte y tienes acceso para toda la vida de la plataforma.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-zinc-900 text-white text-left shadow-2xl ring-1 ring-zinc-900">
+                    <span class="text-sm font-bold tracking-wider text-green-400 uppercase"
+                        data-i18n="now-label">Ahora</span>
+                    <div class="text-5xl font-bold mt-2 mb-4" data-i18n="now-price">GRATIS</div>
+                    <p class="text-zinc-300" data-i18n="now-text">Por tiempo limitado, y como agradecimiento a quienes
+                        confían primero en nosotros, puedes registrarte hoy y obtener acceso vitalicio sin pagar nada.
+                        Sin trucos, sin tarjeta de crédito: tendrás exactamente las mismas ventajas que los futuros
+                        usuarios de pago.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-24 pt-8 max-w-4xl mx-auto px-6 text-center">
+        <button onclick="document.getElementById('modal-cta').showModal()"
+            class="group relative inline-flex items-center justify-center px-12 py-5 font-bold text-white transition-all duration-300 bg-zinc-900 rounded-full hover:bg-zinc-800 hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+            data-i18n="cta-btn">
+            <span class="relative" data-i18n="cta-btn">¿Te interesa?</span>
+            <svg class="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </button>
+    </section>
+
+    <footer class="py-16 bg-black border-t border-zinc-900 text-center">
+        <a href="https://github.com/martinezharo/goal-partner" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 transition-colors text-sm font-medium text-white shadow-lg">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span data-i18n="footer-btn">Proyecto Open Source - Colabora aquí</span>
+        </a>
+    </footer>
+
+    <dialog id="modal-compatibilidad"
+        class="w-full max-w-2xl rounded-3xl p-0 backdrop:bg-zinc-950/50 shadow-2xl border border-zinc-200">
+        <div class="p-8 md:p-12 relative bg-white">
+            <button onclick="this.closest('dialog').close()"
+                class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors">
+                ✕
+            </button>
+            <h3 class="text-2xl font-bold mb-6" data-i18n="modal-compat-title">¿Cómo calculamos la compatibilidad?</h3>
+            <div class="space-y-4 text-zinc-600 leading-relaxed text-sm md:text-base">
+                <p data-i18n="modal-compat-p1">Cada respuesta del formulario se compara entre usuarios y se determina la
+                    similitud. Por ejemplo, en sliders del 1 al 10: si un usuario contesta 1 y otro 10, hay 0 de
+                    similitud; si uno contesta 5 y otro 6, hay 0,9; si ambos contestan 4, hay 1.</p>
+                <p data-i18n="modal-compat-p2">Para preguntas de selección, depende del caso concreto: "No fuma" = 1,
+                    "Ocasionalmente" = 0,5, "Fuma" = 0.</p>
+                <p data-i18n="modal-compat-p3">Cada pregunta tiene un valor en el porcentaje final según la importancia
+                    que le dé cada usuario (del 1 al 5). Se toma la importancia más alta para que el resultado sea
+                    simétrico. Se multiplica la similitud por la importancia, se suman todas las preguntas y se
+                    normaliza para mostrar un porcentaje, siendo 100% cuando todas las respuestas coinciden exactamente.
+                </p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-cta"
+        class="w-full max-w-md rounded-3xl p-0 backdrop:bg-zinc-950/50 shadow-2xl border border-zinc-200">
+        <div class="p-8 bg-white relative">
+            <button onclick="this.closest('dialog').close()"
+                class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors">
+                ✕
+            </button>
+            <h3 class="text-2xl font-bold mb-6" data-i18n="modal-cta-title">Únete a la lista</h3>
+            <form method="dialog" class="space-y-4" onsubmit="event.preventDefault(); this.closest('dialog').close();">
+                <div>
+                    <label class="block text-sm font-medium mb-1" data-i18n="label-email">Email</label>
+                    <input type="email"
+                        class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black"
+                        required>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1" data-i18n="label-age">Edad</label>
+                        <input type="number" min="18"
+                            class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1" data-i18n="label-sex">Sexo</label>
+                        <select
+                            class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black bg-white"
+                            required>
+                            <option value="m">Hombre</option>
+                            <option value="f">Mujer</option>
+                            <option value="o">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1" data-i18n="label-comment">Comentario
+                        (Opcional)</label>
+                    <textarea
+                        class="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-black resize-none h-24"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors mt-4"
+                    data-i18n="submit-btn">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        // Diccionario de traducciones
+        const translations = {
+            en: {
+                "hero-title": "The business of failure is over.",
+                "hero-link": "Keep reading",
+                "paradox-title": "The paradox of dating platforms",
+                "paradox-text": "Do you really believe that an app that thrives on you spending hours inside; watching ads, paying microtransactions, and renewing subscriptions; wants you to find a partner and leave?",
+                "drawbacks-title": "How do they distract you from your real goal: finding a partner?",
+                "card1-title": "Usage Limits",
+                "card1-text": "You are only allowed to see a certain amount of people every so often, whether you like the people shown to you or not.",
+                "card2-title": "Opaque Algorithms",
+                "card2-text": "Within the limited number of people you are allowed to see, no one knows why one person is recommended over another, it's at their discretion.",
+                "card3-title": "Gamification",
+                "card3-text": "Swipes and other mechanics that turn something as serious as a relationship into child's play.",
+                "card4-title": "Zero Adaptability",
+                "card4-text": "You are forced to present yourself, not as you are, but as the platform wants you to be: Prompts, character limits, mandatory photos...",
+                "alt-text": "All apps claim to be \"the alternative\". But as long as they repeat the same traps, they remain inside the paradox. The only one that shares your exact goal is Goal: Partner.",
+                "diff-title": "What makes Goal: Partner. different?",
+                "diff1-title": "No subscriptions, microtransactions or advertising",
+                "diff1-text": "We get no benefit from your continuous or prolonged use. In fact, by renouncing recurring revenue, we are forced to offer you the best possible service so you can find a partner and stop using the platform as soon as possible.",
+                "diff2-title": "Transparent algorithm",
+                "diff2-text": "People who meet your requirements appear sorted by compatibility percentage or proximity, as you prefer.",
+                "diff2-btn": "Discover how we calculate compatibility.",
+                "diff3-title": "Time in your hands",
+                "diff3-text": "See everyone who fits your filters instantly, without paying and without absurd waiting. You don't need to be glued to the app all day: review everyone at once and, if no one convinces you, turn on notifications and we will let you know when someone truly compatible arrives.",
+                "diff4-title": "Flexible usage",
+                "diff4-text": "Present yourself however you want: with or without a photo, with a short phrase or a long text. Here, you decide.",
+                "price-title": "What is the cost of Goal: Partner.?",
+                "price-label": "Price",
+                "price-text": "No monthly fees, no premium plans and no fine print. You pay once when you register and get lifetime access to the platform.",
+                "now-label": "Now",
+                "now-price": "FREE",
+                "now-text": "For a limited time, and as a thank you to those who trust us first, you can register today and get lifetime access for nothing. No tricks, no credit card: you will have exactly the same benefits as future paying users.",
+                "cta-btn": "Are you interested?",
+                "footer-btn": "Open Source Project - Collaborate here",
+                "modal-compat-title": "How do we calculate compatibility?",
+                "modal-compat-p1": "Each form answer is compared between users to determine similarity. For example, on sliders from 1 to 10: if one user answers 1 and another 10, there is 0 similarity; if one answers 5 and another 6, there is 0.9; if both answer 4, there is 1.",
+                "modal-compat-p2": "For multiple-choice questions, it depends on the specific case: \"Does not smoke\" = 1, \"Occasionally\" = 0.5, \"Smokes\" = 0.",
+                "modal-compat-p3": "Each question has a weight in the final percentage based on the importance given by each user (from 1 to 5). The highest importance is taken so the result is symmetric. The similarity is multiplied by the importance, all questions are summed, and it is normalized to show a percentage, being 100% when all answers match exactly.",
+                "modal-cta-title": "Join the waitlist",
+                "label-email": "Email",
+                "label-age": "Age",
+                "label-sex": "Gender",
+                "label-comment": "Comment (Optional)",
+                "submit-btn": "Submit"
+            },
+            es: {
+                // Almacenamos el estado original para restaurarlo
+                "hero-title": "El negocio del fracaso ha terminado.",
+                "hero-link": "Sigue leyendo",
+                "paradox-title": "La paradoja de las plataformas de citas",
+                "paradox-text": "¿De verdad crees que una app que vive de que pases horas dentro; viendo anuncios, pagando microtransacciones y renovando suscripciones; quiere que encuentres pareja y la abandones?",
+                "drawbacks-title": "¿Cómo te desvían de tu objetivo real: encontrar pareja?",
+                "card1-title": "Límites de Uso",
+                "card1-text": "Sólo se te permite ver una cierta cantidad de gente cada cierto tiempo, te guste o no la gente que se te muestra.",
+                "card2-title": "Algoritmos Opacos",
+                "card2-text": "Dentro del número limitado de personas que se te permite ver, nadie sabe por qué se te recomienda una persona sí u otra no, queda a su discrección.",
+                "card3-title": "Gamificación",
+                "card3-text": "Swipes y otras mecánicas que convierte algo tan serio como una relación en un juego de niños.",
+                "card4-title": "Adaptabilidad Nula",
+                "card4-text": "Estás obligado a mostrarte, no como eres, sino como la plataforma quieres que te muestres: Prompts, límites de caracteres, obligatoriedad de poner o no poner foto…",
+                "alt-text": "Todas las apps dicen ser \"la alternativa\". Pero mientras repitan las mismas trampas, siguen dentro de la paradoja. La única que comparte tu mismo objetivo es Goal: Partner.",
+                "diff-title": "¿Qué hace a Goal: Partner. diferente?",
+                "diff1-title": "Sin suscripciones, microtransacciones ni publicidad",
+                "diff1-text": "No obtenemos ningún beneficio por tu uso continuo o prolongado. De hecho, al renunciar a ingresos recurrentes, nos vemos obligados a ofrecerte el mejor servicio posible para que encuentres pareja y dejes de usar la plataforma lo antes posible.",
+                "diff2-title": "Algoritmo transparente",
+                "diff2-text": "Las personas que cumplen tus requisitos aparecen ordenadas por porcentaje de compatibilidad o proximidad, según prefieras.",
+                "diff2-btn": "Descubre cómo calculamos la compatibilidad.",
+                "diff3-title": "Tiempo en tus manos",
+                "diff3-text": "Ves todas las personas que encajan con tus filtros al instante, sin pagar y sin esperas absurdas. No necesitas estar pendiente de la app todo el día: revisa a todos de golpe y, si no hay nadie que te convenza, activa las notificaciones y te avisaremos cuando llegue alguien realmente compatible.",
+                "diff4-title": "Uso flexible",
+                "diff4-text": "Preséntate como quieras: con o sin foto, con una frase breve o un texto largo. Aquí decides tú.",
+                "price-title": "¿Cuál es el coste de Goal: Partner.?",
+                "price-label": "Precio",
+                "price-text": "Sin cuotas mensuales, sin planes premium y sin letra pequeña. Pagas una sola vez al registrarte y tienes acceso para toda la vida de la plataforma.",
+                "now-label": "Ahora",
+                "now-price": "GRATIS",
+                "now-text": "Por tiempo limitado, y como agradecimiento a quienes confían primero en nosotros, puedes registrarte hoy y obtener acceso vitalicio sin pagar nada. Sin trucos, sin tarjeta de crédito: tendrás exactamente las mismas ventajas que los futuros usuarios de pago.",
+                "cta-btn": "¿Te interesa?",
+                "footer-btn": "Proyecto Open Source - Colabora aquí",
+                "modal-compat-title": "¿Cómo calculamos la compatibilidad?",
+                "modal-compat-p1": "Cada respuesta del formulario se compara entre usuarios y se determina la similitud. Por ejemplo, en sliders del 1 al 10: si un usuario contesta 1 y otro 10, hay 0 de similitud; si uno contesta 5 y otro 6, hay 0,9; si ambos contestan 4, hay 1.",
+                "modal-compat-p2": "Para preguntas de selección, depende del caso concreto: \"No fuma\" = 1, \"Ocasionalmente\" = 0,5, \"Fuma\" = 0.",
+                "modal-compat-p3": "Cada pregunta tiene un valor en el porcentaje final según la importancia que le dé cada usuario (del 1 al 5). Se toma la importancia más alta para que el resultado sea simétrico. Se multiplica la similitud por la importancia, se suman todas las preguntas y se normaliza para mostrar un porcentaje, siendo 100% cuando todas las respuestas coinciden exactamente.",
+                "modal-cta-title": "Únete a la lista",
+                "label-email": "Email",
+                "label-age": "Edad",
+                "label-sex": "Sexo",
+                "label-comment": "Comentario (Opcional)",
+                "submit-btn": "Enviar"
+            }
+        };
+
+        // Lógica de cambio de idioma
+        let currentLang = 'es';
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            langToggleBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+            document.documentElement.lang = currentLang;
+
+            i18nElements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+
+            // Lógica específica para cambiar el texto de las opciones del select en inglés si es necesario
+            if (currentLang === 'en') {
+                const select = document.querySelector('select');
+                select.options[0].text = "Male";
+                select.options[1].text = "Female";
+                select.options[2].text = "Other";
+            } else {
+                const select = document.querySelector('select');
+                select.options[0].text = "Hombre";
+                select.options[1].text = "Mujer";
+                select.options[2].text = "Otro";
+            }
+        });
+
+        // Cerrar modales al hacer clic fuera de ellos (en el backdrop)
+        const modals = document.querySelectorAll('dialog');
+        modals.forEach(dialog => {
+            dialog.addEventListener('click', (e) => {
+                const dialogDimensions = dialog.getBoundingClientRect()
+                if (
+                    e.clientX < dialogDimensions.left ||
+                    e.clientX > dialogDimensions.right ||
+                    e.clientY < dialogDimensions.top ||
+                    e.clientY > dialogDimensions.bottom
+                ) {
+                    dialog.close()
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
