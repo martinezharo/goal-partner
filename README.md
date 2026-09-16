@@ -32,7 +32,7 @@ Traditional dating apps are built on a "business of failure." They benefit from 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18.17.1 or higher)
-- [npm](https://www.npmjs.com/)
+- [pnpm](https://pnpm.io/) (the repo pins its version through `packageManager`, so `corepack enable` is enough)
 
 ### Installation
 
@@ -44,12 +44,12 @@ Traditional dating apps are built on a "business of failure." They benefit from 
 
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Run the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 The site will be available at `http://localhost:4321`.
@@ -62,8 +62,8 @@ This project is configured for Cloudflare Pages.
 2. Update the `id` for the `WAITLIST` binding in `wrangler.json` with your own namespace ID.
 3. Deploy to Cloudflare:
    ```bash
-   npm run build
-   npx wrangler pages deploy ./dist
+   pnpm build
+   pnpm dlx wrangler pages deploy ./dist
    ```
 
 ## ⚠️ Project Status

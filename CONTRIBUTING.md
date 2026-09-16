@@ -38,10 +38,10 @@ You can contribute in several ways:
 git clone https://github.com/YOUR_USERNAME/goal-partner.git
 
 # Install
-npm install
+pnpm install
 
 # Run dev server
-npm run dev
+pnpm dev
 ```
 
 The server will run on `http://localhost:4321`.

@@ -1,0 +1,9 @@
+packages:
+  - '.'
+
+# esbuild, sharp and workerd fetch or link platform binaries in a postinstall
+# script. pnpm blocks build scripts unless they are listed here.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
