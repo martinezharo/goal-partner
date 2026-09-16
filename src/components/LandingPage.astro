@@ -10,10 +10,10 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<nav
-    class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-100"
->
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<nav id="site-nav" class="fixed top-0 inset-x-0 z-40">
+    <div
+        class="relative max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"
+    >
         <span class="font-bold text-xl tracking-tight">GOAL: PARTNER.</span>
         <a
             href={t.altLangUrl}
@@ -24,8 +24,9 @@ const { t } = Astro.props;
     </div>
 </nav>
 
-<header class="max-w-6xl mx-auto px-6 pt-10 pb-16 md:pt-16">
+<header class="max-w-6xl mx-auto px-6 pt-26 pb-16 md:pt-32">
     <div
+        id="hero-card"
         class="relative w-full max-w-5xl mx-auto aspect-[4/5] md:aspect-[21/9] bg-zinc-100 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-zinc-200 shadow-2xl group transition-all duration-500"
     >
         <picture>
@@ -437,6 +438,60 @@ const { t } = Astro.props;
 </dialog>
 
 <script>
+    // Nav: no background on first paint, so only the wordmark and the language
+    // pill sit on the white hero.
+    //
+    // The surface is not toggled on a scroll threshold: flipping it the moment
+    // the photo reached the bar painted a white band right on top of the image,
+    // which read as a flash. Instead the fade is driven by scroll position and
+    // finishes just BEFORE the photo arrives, so it happens entirely over the
+    // white background — invisible — and the image slides under a bar that is
+    // already painted. The blur itself never turns on or off (see
+    // #site-nav::before in global.css), so the compositing layer exists from the
+    // first frame rather than being created mid-scroll.
+    const nav = document.getElementById("site-nav");
+    const heroCard = document.getElementById("hero-card");
+
+    if (nav && heroCard) {
+        // The fade runs over exactly the white gap between the bar and the top
+        // of the photo: 0 while the page is at rest, 1 the instant they meet.
+        // Measuring it (instead of picking a constant) keeps the endpoints
+        // right at any breakpoint, where the hero padding differs.
+        let fadeDistance = 0;
+        let ticking = false;
+
+        const measure = () => {
+            const rect = heroCard.getBoundingClientRect();
+            fadeDistance = rect.top + window.scrollY - nav.offsetHeight;
+        };
+
+        const updateNav = () => {
+            ticking = false;
+            const gap = heroCard.getBoundingClientRect().top - nav.offsetHeight;
+            const progress =
+                fadeDistance > 0
+                    ? Math.min(Math.max(1 - gap / fadeDistance, 0), 1)
+                    : 1;
+            nav.style.setProperty("--nav-surface", String(progress));
+        };
+
+        const requestUpdate = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(updateNav);
+        };
+
+        const remeasure = () => {
+            measure();
+            requestUpdate();
+        };
+
+        measure();
+        updateNav();
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", remeasure);
+    }
+
     const form = document.getElementById("waitlist-form") as HTMLFormElement;
     const submitBtn = document.getElementById(
         "submit-form-btn"

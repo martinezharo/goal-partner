@@ -6,10 +6,36 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchor targets clear of the fixed nav. */
+  scroll-padding-top: 4rem;
 }
 
 body {
   font-family: var(--font-inter);
+}
+
+/* The nav surface lives on a pseudo-element driven by --nav-surface (0 to 1),
+   which the landing page updates from the scroll position. Two deliberate
+   choices here:
+
+   - No CSS transition. The value tracks the scroll itself, so the surface
+     follows the finger/wheel instead of animating on its own clock, which is
+     what made the change look like a flash when it collided with the photo
+     moving underneath.
+   - backdrop-filter is always applied, not toggled. Over the white hero a blur
+     of plain white is invisible, so the header still reads as "no background",
+     but the compositing layer exists from the first frame and Chrome never has
+     to create it mid-scroll. */
+#site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / calc(var(--nav-surface, 0) * 0.8));
+  border-bottom: 1px solid rgb(244 244 245 / var(--nav-surface, 0));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+  will-change: background-color;
 }
 
 dialog::backdrop {
