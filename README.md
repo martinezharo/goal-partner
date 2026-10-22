@@ -15,7 +15,7 @@ Traditional dating apps are built on a "business of failure." They benefit from 
 
 ## 🛠 Tech Stack
 
-- **Framework:** [Astro 5](https://astro.build/)
+- **Framework:** [Astro 7](https://astro.build/)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Infrastructure:** [Cloudflare Pages](https://pages.cloudflare.com/)
 - **Database:** [Cloudflare KV](https://developers.cloudflare.com/kv/) (Key-Value storage for the waitlist)
@@ -31,7 +31,7 @@ Traditional dating apps are built on a "business of failure." They benefit from 
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18.17.1 or higher)
+- [Node.js](https://nodejs.org/) (v24.22.1 or higher)
 - [pnpm](https://pnpm.io/) (the repo pins its version through `packageManager`, so `corepack enable` is enough)
 
 ### Installation
@@ -56,7 +56,9 @@ The site will be available at `http://localhost:4321`.
 
 ## 📡 Deployment
 
-This project is configured for Cloudflare Pages. 
+This project is configured for Cloudflare Pages. Astro generates static HTML;
+`functions/api/join.ts` handles the waitlist through a Pages Function.
+Use `pnpm preview` to exercise both locally with local KV state.
 
 1. Ensure you have a KV namespace created in your Cloudflare account.
 2. Update the `id` for the `WAITLIST` binding in `wrangler.json` with your own namespace ID.
@@ -68,7 +70,7 @@ This project is configured for Cloudflare Pages.
 
 ## ⚠️ Project Status
 
-**This project is currently on standby.** 
+**This project is currently on standby.**
 
 I am not actively developing new features at this moment, but the core landing page is functional and ready for deployment. If there is significant community interest or high-quality pull requests, I will resume active development.
 

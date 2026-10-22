@@ -27,7 +27,7 @@ You can contribute in several ways:
 
 1. **Fork the repo** and create a new branch from `main`.
 2. **Keep it simple:** Small, focused PRs are easier to review and merge.
-3. **Respect the stack:** This project uses Astro 5 and Tailwind CSS v4. Please stick to these technologies.
+3. **Respect the stack:** This project uses Astro 7 and Tailwind CSS v4. Please stick to these technologies.
 4. **i18n:** If you add a new feature that includes text, please ensure you update both `src/i18n/translations.base.ts` (Spanish and English).
 5. **Linting & Formatting:** Ensure your code follows the existing style for consistency.
 

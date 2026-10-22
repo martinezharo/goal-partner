@@ -5,14 +5,17 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "pnpm build && wrangler pages dev dist",
+    "astro": "astro",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.13",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^5.18.2",
+    "astro": "~7.3.8",
     "tailwindcss": "^4.3.3"
   },
-  "packageManager": "pnpm@12.3.4"
+  "packageManager": "pnpm@12.3.4",
+  "devDependencies": {
+    "wrangler": "^4.152.0"
+  }
 }
